@@ -740,10 +740,6 @@ namespace LibTessDotNet
                 OutputPolymesh(elementType, polySize);
             }
 
-            if (UsePooling)
-            {
-                _mesh.Free();
-            }
             _mesh = null;
         }
     }

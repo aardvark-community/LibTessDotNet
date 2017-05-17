@@ -40,7 +40,7 @@ namespace LibTessDotNet.Double
 namespace LibTessDotNet
 #endif
 {
-    internal class Mesh : MeshUtils.Pooled<Mesh>
+    internal class Mesh
     {
         internal MeshUtils.Vertex _vHead;
         internal MeshUtils.Face _fHead;
@@ -48,8 +48,8 @@ namespace LibTessDotNet
 
         public Mesh()
         {
-            var v = _vHead = MeshUtils.Vertex.Create();
-            var f = _fHead = MeshUtils.Face.Create();
+            var v = _vHead = new MeshUtils.Vertex();
+            var f = _fHead = new MeshUtils.Face();
 
             var pair = MeshUtils.EdgePair.Create();
             var e = _eHead = pair._e;
@@ -81,32 +81,6 @@ namespace LibTessDotNet
             eSym._Lface = null;
             eSym._winding = 0;
             eSym._activeRegion = null;
-        }
-
-        public override void Reset()
-        {
-            _vHead = null;
-            _fHead = null;
-            _eHead = _eHeadSym = null;
-        }
-
-        public override void OnFree()
-        {
-            for (MeshUtils.Face f = _fHead._next, fNext = _fHead; f != _fHead; f = fNext)
-            {
-                fNext = f._next;
-                f.Free();
-            }
-            for (MeshUtils.Vertex v = _vHead._next, vNext = _vHead; v != _vHead; v = vNext)
-            {
-                vNext = v._next;
-                v.Free();
-            }
-            for (MeshUtils.Edge e = _eHead._next, eNext = _eHead; e != _eHead; e = eNext)
-            {
-                eNext = e._next;
-                e.Free();
-            }
         }
 
         /// <summary>
@@ -391,8 +365,7 @@ namespace LibTessDotNet
             var fNext = fZap._next;
             fNext._prev = fPrev;
             fPrev._next = fNext;
-
-            fZap.Free();
+            
         }
 
         public void MergeConvexFaces(int maxVertsPerFace)
