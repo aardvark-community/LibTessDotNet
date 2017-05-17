@@ -33,3 +33,6 @@ obj/
 Work/
 Build/Debug/
 Build/Release/
+bin
+packages
+paket-files
