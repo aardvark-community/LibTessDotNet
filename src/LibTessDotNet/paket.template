@@ -1,0 +1,8 @@
+type project
+id Unofficial.LibTessDotNet
+authors VRVis Research Center
+description
+    LibTessDotNet package
+files
+    ..\..\bin\Release\LibTessDotNet.dll ==> lib\net45
+    ..\..\bin\Release\LibTessDotNet.pdb ==> lib\net45

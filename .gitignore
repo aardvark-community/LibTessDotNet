@@ -36,3 +36,4 @@ Build/Release/
 bin
 packages
 paket-files
+/.fake
