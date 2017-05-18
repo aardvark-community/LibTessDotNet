@@ -2,6 +2,9 @@ framework: net45
 source https://api.nuget.org/v3/index.json
 source https://vrvis.myget.org/F/aardvark_public/api/v3/index.json
 
+nuget NUnit              ~> 3.6.1
+nuget Poly2Tri.dll       ~> 1.0.4
+
 group Build
 framework: net45
 content: none

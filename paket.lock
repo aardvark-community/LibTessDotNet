@@ -1,4 +1,8 @@
 FRAMEWORK: NET45
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    NUnit (3.6.1)
+    Poly2Tri.dll (1.0.4)
 
 GROUP Build
 CONTENT: NONE
