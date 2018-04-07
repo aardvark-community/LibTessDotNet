@@ -1,4 +1,4 @@
-framework: net45
+framework: netstandard2.0,net461
 source https://api.nuget.org/v3/index.json
 source https://vrvis.myget.org/F/aardvark_public/api/v3/index.json
 
@@ -11,4 +11,4 @@ content: none
 source https://vrvis.myget.org/F/aardvark_public/api/v3/index.json
 source https://api.nuget.org/v3/index.json
 
-github vrvis/Aardvark.Fake:standalone
+github vrvis/Aardvark.Fake:v4
