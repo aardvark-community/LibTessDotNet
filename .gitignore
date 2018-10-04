@@ -39,3 +39,5 @@ paket-files
 /.fake
 /src/.vs/LibTessDotNet/v15/Server/sqlite3/db.lock
 /src/.vs/LibTessDotNet/v15/Server/sqlite3/storage.ide
+/.paket/paket.exe
+/.paket/*.targets
