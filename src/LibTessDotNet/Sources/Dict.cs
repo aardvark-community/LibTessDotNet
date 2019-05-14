@@ -31,11 +31,12 @@
 ** LibTessDotNet: Remi Gillig, https://github.com/speps/LibTessDotNet
 */
 
-#if DOUBLE
+//#if DOUBLE
+//namespace LibTessDotNet.Double
+//#else
+//namespace LibTessDotNet
+//#endif
 namespace LibTessDotNet.Double
-#else
-namespace LibTessDotNet
-#endif
 {
     internal class Dict<TValue> where TValue : class
     {

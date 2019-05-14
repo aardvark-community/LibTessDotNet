@@ -35,11 +35,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-#if DOUBLE
+//#if DOUBLE
+//namespace LibTessDotNet.Double
+//#else
+//namespace LibTessDotNet
+//#endif
 namespace LibTessDotNet.Double
-#else
-namespace LibTessDotNet
-#endif
 {
     internal class PriorityQueue<TValue> where TValue : class
     {
