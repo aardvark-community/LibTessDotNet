@@ -1,5 +1,4 @@
-﻿using LibTessDotNet;
-using LibTessDotNet.Double;
+﻿using LibTessDotNet.Double;
 using System;
 using System.Drawing;
 
@@ -13,11 +12,11 @@ namespace TessExample
             // Fetch the vertex data.
             var colors = new Color[] { (Color)data[0], (Color)data[1], (Color)data[2], (Color)data[3] };
             // Interpolate with the 4 weights.
-            var rgba = new double[] {
-                (double)colors[0].R * weights[0] + (double)colors[1].R * weights[1] + (double)colors[2].R * weights[2] + (double)colors[3].R * weights[3],
-                (double)colors[0].G * weights[0] + (double)colors[1].G * weights[1] + (double)colors[2].G * weights[2] + (double)colors[3].G * weights[3],
-                (double)colors[0].B * weights[0] + (double)colors[1].B * weights[1] + (double)colors[2].B * weights[2] + (double)colors[3].B * weights[3],
-                (double)colors[0].A * weights[0] + (double)colors[1].A * weights[1] + (double)colors[2].A * weights[2] + (double)colors[3].A * weights[3]
+            var rgba = new float[] {
+                (float)colors[0].R * (float)weights[0] + (float)colors[1].R * (float)weights[1] + (float)colors[2].R * (float)weights[2] + (float)colors[3].R * (float)weights[3],
+                (float)colors[0].G * (float)weights[0] + (float)colors[1].G * (float)weights[1] + (float)colors[2].G * (float)weights[2] + (float)colors[3].G * (float)weights[3],
+                (float)colors[0].B * (float)weights[0] + (float)colors[1].B * (float)weights[1] + (float)colors[2].B * (float)weights[2] + (float)colors[3].B * (float)weights[3],
+                (float)colors[0].A * (float)weights[0] + (float)colors[1].A * (float)weights[1] + (float)colors[2].A * (float)weights[2] + (float)colors[3].A * (float)weights[3]
             };
             // Return interpolated data for the new vertex.
             return Color.FromArgb((int)rgba[3], (int)rgba[0], (int)rgba[1], (int)rgba[2]);
@@ -38,7 +37,7 @@ namespace TessExample
             for (int i = 0; i < numPoints; i++)
             {
                 // NOTE : Z is here for convenience if you want to keep a 3D vertex position throughout the tessellation process but only X and Y are important.
-                contour[i].Position = new Vec3 { X = inputData[i * 2], Y = inputData[i * 2 + 1], Z = 0.0f };
+                contour[i].Position = new Vec3(inputData[i * 2], inputData[i * 2 + 1], 0);
                 // Data can contain any per-vertex data, here a constant color.
                 contour[i].Data = Color.Azure;
             }

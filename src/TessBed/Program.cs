@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using LibTessDotNet;
-using System.Diagnostics;
 using LibTessDotNet.Double;
+using System.Diagnostics;
 
 namespace TessBed
 {
@@ -32,9 +31,9 @@ namespace TessBed
                     var loader = new DataLoader();
                     for (int i = 0; i < count; i++)
                     {
-                        foreach (var name in loader.AssetNames)
+                        foreach (var asset in loader.Assets)
                         {
-                            var pset = loader.GetAsset(name).Polygons;
+                            var pset = asset.Polygons;
 
                             foreach (WindingRule winding in Enum.GetValues(typeof(WindingRule)))
                             {
